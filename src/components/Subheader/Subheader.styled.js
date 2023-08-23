@@ -1,11 +1,15 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+	display: flex;
+	gap: 10px;
 	width: 100%;
 `;
 
 export const InputOverlay = styled.div`
 	position: relative;
+	flex-grow: 2;
 `;
 
 export const SearchInput = styled.input`
@@ -16,9 +20,13 @@ export const SearchInput = styled.input`
 	background: #fff;
 	padding: 13px 20px;
 
-	color: #8c8c8c;
+	color: ##1d1d1d;
 	font-size: 20px;
 	line-height: 1.5;
+
+	&::placeholder {
+		color: #8c8c8c;
+	}
 
 	&:hover {
 		border-color: #fbe0dc;
@@ -38,4 +46,30 @@ export const SearchButton = styled.button`
 	border: 0;
 	border-radius: 10px;
 	background: #fbe0dc;
+
+	cursor: pointer;
+`;
+
+export const UserPics = styled.ul`
+	display: flex;
+	gap: 10px;
+`;
+
+export const Link = styled(NavLink)`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 20px;
+	background: #fff;
+	fill: #ff868e;
+
+	&:hover {
+		background-color: #fbe0dc;
+	}
+	&.active {
+		background-color: #ff868e;
+		fill: #fff;
+	}
 `;

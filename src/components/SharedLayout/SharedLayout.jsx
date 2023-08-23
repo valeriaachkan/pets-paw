@@ -1,7 +1,7 @@
 import { PageContainer, SideSection, MainSection, HomeLogo, Heading, Subheading, Caption} from "./SharedLayout.styled";
 import { Outlet } from "react-router";
 // import BeatLoader from 'react-spinners/ClipLoader';
-import { ReactComponent as Logo } from "../assets/Logo.svg";
+import { ReactComponent as Logo } from "/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/Logo.svg";
 import { NavBar } from "../NavBar/NavBar";
 
 

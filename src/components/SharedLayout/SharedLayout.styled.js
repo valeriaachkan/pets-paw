@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const PageContainer = styled.div`
 	display: grid;
 	grid-template-columns: 8.5% 32.5% 9.5% 49.5%;
-	grid-template-rows: 100%;
+	grid-template-rows: 100% 30px;
 	margin: 0 auto;
 	padding: 30px;
 	height: 100vh;
@@ -13,10 +13,13 @@ export const PageContainer = styled.div`
 
 export const SideSection = styled.section`
 	grid-column: 2;
+	grid-row: 1;
 `;
 
 export const MainSection = styled.section`
 	grid-column: 4;
+	grid-row: 1;
+	max-height: 100%;
 `;
 
 export const HomeLogo = styled(Link)`

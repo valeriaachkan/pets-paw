@@ -37,14 +37,14 @@ export const Link = styled(NavLink)`
 	flex-basis: calc((100% - 32px) / 3);
 	cursor: pointer;
 
-	&.hover > ${ImageThumb} {
+	&:hover > ${ImageThumb} {
 		border-color: #fff;
 	}
 	&.active > ${ImageThumb} {
 		border-color: #fbe0dc;
 	}
 
-	&.hover > ${Title} {
+	&:hover > ${Title} {
 		background-color: #fbe0dc;
 	}
 	&.active > ${Title} {
