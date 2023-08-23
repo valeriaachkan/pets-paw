@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import coverImg from '/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/girl-and-pet.png'
+import coverImg from '../assets/girl-and-pet.png';
 
 
 const StyledCoverSection = styled.div`
