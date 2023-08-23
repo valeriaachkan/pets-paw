@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import ToolBar from '../ToolBar/ToolBar';
 
 
 const Container = styled.div`
@@ -15,10 +14,9 @@ background-color: #FFFFFF;
 
 
 
-const ContentSection = ({pageTitle, children, sort, upload, paramsChangeHandler}) => {
+const ContentSection = ({ children }) => {
     return (
         <Container>
-            {/* <ToolBar title={pageTitle} sort={sort} upload={upload} paramsChangeHandler={paramsChangeHandler}></ToolBar> */}
             {children}
         </Container>
     )

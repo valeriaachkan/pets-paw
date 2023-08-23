@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ReactComponent as DropdownIcon }from '/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/dropdown-12.svg';
+import { ReactComponent as DropdownIcon }from '../../assets/dropdown-12.svg';
 import { DropdownStyle, SelectContainer, SelectLabelButton, DropdownItem } from "./Select.styled";
 
 export const Select = ({ label, values, handleQueryParams, type, width }) => {

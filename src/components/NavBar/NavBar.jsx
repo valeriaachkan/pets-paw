@@ -1,7 +1,7 @@
 import { Nav, Link, ImageThumb, Title } from "./NavBar.styled";
-import voteImg from "/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/vote-table.png";
-import breedsImg from "/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/pet-breeds.png";
-import galleryImg from "/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/images-search.png";
+import voteImg from "../../assets/vote-table.png";
+import breedsImg from "../../assets/pet-breeds.png";
+import galleryImg from "../../assets/images-search.png";
 
 
 

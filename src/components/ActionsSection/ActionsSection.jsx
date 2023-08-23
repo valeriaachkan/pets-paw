@@ -1,7 +1,7 @@
 import { ActionItem, ActionList, Id, Text, Time } from "./ActionsSection.styled";
-import { ReactComponent as FavIcon }from '/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/fav-30.svg';
-import { ReactComponent as LikeIcon }from '/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/like-30.svg';
-import { ReactComponent as DislikeIcon }from '/Users/valeriaachkan/Documents/projects/pets-paw/src/assets/dislike-30.svg';
+import { ReactComponent as FavIcon }from '../../assets/fav-30.svg';
+import { ReactComponent as LikeIcon }from '../../assets/like-30.svg';
+import { ReactComponent as DislikeIcon }from '../../assets/dislike-30.svg';
 
 
 const ActionsSection = ({actions}) => {
