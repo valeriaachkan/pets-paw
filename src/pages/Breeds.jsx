@@ -9,6 +9,7 @@ import ToolBar from "../components/ToolBar/ToolBar";
 
 const initialParams = {
     limit: '10',
+    has_breeds: '1',
 }
 
 export const Breeds = () => {

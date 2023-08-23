@@ -15,6 +15,7 @@ export const Voting = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const actionsHistory = loadActionsFromLocalStorage();
+    console.log(actionsHistory)
     
 useEffect(() => {
     async function getCatToVote() {

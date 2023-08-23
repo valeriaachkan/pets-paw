@@ -5,7 +5,8 @@ import { ReactComponent as DislikeIcon }from '/Users/valeriaachkan/Documents/pro
 
 
 const ActionsSection = ({actions}) => {
-    const visibleActions = actions.reverse();
+    const visibleActions = actions.reverse().slice(0,5);
+    console.log(visibleActions);
     return (
         <ActionList>
             {visibleActions.map((action) =>
