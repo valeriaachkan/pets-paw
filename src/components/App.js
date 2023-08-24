@@ -1,11 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { BreedDetailsPage } from '../pages/BreedDetailsPage';
 import { BreedsPage } from '../pages/BreedsPage';
+import { DislikesPage } from '../pages/DislikesPage';
+import { FavoritesPage } from '../pages/FavoritesPage';
 import { GalleryPage } from '../pages/GalleryPage';
 import { HomePage } from '../pages/HomePage';
+import { LikesPage } from '../pages/LikesPage';
 import { VotingPage } from '../pages/VotingPage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { Subheader } from './Subheader/Subheader';
 
 const App = () => {
 	return (
@@ -17,24 +19,10 @@ const App = () => {
 					<Route path="breeds" element={<BreedsPage />} />
 					<Route path="breeds/:breedId" element={<BreedDetailsPage />} />
 					<Route path="gallery" element={<GalleryPage />} />
-					<Route path="favorites" element={<Subheader></Subheader>} />
-					<Route
-						path="likes"
-						element={
-							<div>
-								<Subheader></Subheader>Likes
-							</div>
-						}
-					/>
-					<Route
-						path="dislikes"
-						element={
-							<div>
-								<Subheader></Subheader>Disikes
-							</div>
-						}
-					/>
-					<Route path="*" element={<div>Not Found</div>} />
+					<Route path="favorites" element={<FavoritesPage />} />
+					<Route path="likes" element={<LikesPage />} />
+					<Route path="dislikes" element={<DislikesPage />} />
+					<Route path="*" element={<Navigate to="/" />} />
 				</Route>
 			</Routes>
 		</div>

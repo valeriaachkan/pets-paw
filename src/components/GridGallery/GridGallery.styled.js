@@ -19,6 +19,9 @@ export const Gallery = styled.ul`
 `;
 
 export const Wrapper = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -136,9 +139,9 @@ export const BreedLink = styled(Link)`
 `;
 
 export const FavButton = styled.div`
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	// position: absolute;
+	// bottom: 20px;
+	// right: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

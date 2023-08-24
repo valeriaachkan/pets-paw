@@ -28,11 +28,11 @@ const loadCatsFromLocalStorage = (key) => {
 	}
 };
 
-const removeCatFromLocalStorage = (key, id) => {
+const removeCatFromLocalStorage = (key, { id }) => {
 	try {
 		const savedData = loadCatsFromLocalStorage(key);
-		savedData.filter((cat) => cat.id !== id);
-		const serializedData = JSON.stringify(savedData);
+		const newData = [...savedData.filter((cat) => cat.id !== id)];
+		const serializedData = JSON.stringify(newData);
 
 		localStorage.setItem(key, serializedData);
 	} catch (error) {
