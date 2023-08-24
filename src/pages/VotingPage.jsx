@@ -7,9 +7,10 @@ import { ActionsSection } from '../components/ActionsSection/ActionsSection';
 import { ImageOverlay } from '../components/ImageOverlay/ImageOverlay';
 import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
 import { Loader } from "../components/Loader/Loader";
+import ToolBar from "../components/ToolBar/ToolBar";
 
 
-export const Voting = () => {
+export const VotingPage = () => {
     const [catInfo, setCatInfo] = useState(null);
     const [isVoted, setIsVoted] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -42,7 +43,8 @@ const onReactionButtonClick = (type, catInfo) => {
     return (
         <>
             <Subheader/>
-            <ContentSection pageTitle={'voting'}>
+            <ContentSection>
+                <ToolBar title={'voting'}/>
                 {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
                 <ReactionButtons catInfo={catInfo} onButtonClick={onReactionButtonClick}>{loading && <Loader loading={loading}/>}{catInfo && !loading && <ImageOverlay url={catInfo.url}/>}</ReactionButtons>
                 {actionsHistory && <ActionsSection actions={actionsHistory}/>}

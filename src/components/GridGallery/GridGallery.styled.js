@@ -1,16 +1,11 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Gallery = styled.ul`
 	display: grid;
 	grid-template-columns: repeat(3, 30.5%);
-
 	grid-gap: 20px;
-
-	height: fit-content;
-	max-height: calc(100% - 60px);
 	margin-top: 20px;
-
-	overflow: scroll;
 
 	${({ $gridLength }) =>
 		$gridLength === 5
@@ -34,7 +29,6 @@ export const Wrapper = styled.div`
 	background: rgba(255, 134, 142, 0.6);
 	visibility: hidden;
 `;
-
 export const GalleryItem = styled.li`
 	position: relative;
 	width: 100%;
@@ -103,10 +97,6 @@ export const GalleryItem = styled.li`
 	&:nth-child(20) {
 		grid-area: 12 / 3 / 13 / 4;
 	}
-
-	&:hover > ${Wrapper} {
-		visibility: visible;
-	}
 `;
 
 export const Image = styled.img`
@@ -129,4 +119,15 @@ export const BreedName = styled.p`
 	text-align: center;
 	font-size: 16px;
 	line-height: 1.5;
+`;
+
+export const BreedLink = styled(Link)`
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	&:hover > ${Wrapper} {
+		visibility: visible;
+	}
 `;

@@ -1,15 +1,16 @@
-
-import { Container, BackButton, Title } from './ToolBar.styled';
+import { Container, BackButton, Title, Subtitle } from './ToolBar.styled';
 import { ReactComponent as BackArrow }from '../../assets/back-20.svg';
-// import SortBreeds from '../SortBreeds/SortBreeds';
+import { useParams } from 'react-router-dom';
 
 const ToolBar = ({title, children}) => {
+    const { breedId } = useParams();
+
     return (
         <Container>
             <BackButton><BackArrow/></BackButton>
-            <Title>{title}</Title>
+            <Title $isBreedId={breedId && true}>{title}</Title>
+            {breedId && <Subtitle>{breedId}</Subtitle>}
             {children}
-            {/* {sort && <SortBreeds paramsChangeHandler={paramsChangeHandler}/>} */}
         </Container>
     )
 }

@@ -28,6 +28,7 @@ export const DropdownStyle = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 3;
 	display: flex;
 	flex-direction: column;
 
@@ -41,6 +42,7 @@ export const DropdownStyle = styled.div`
 	background-color: #f8f8f7;
 
 	transition: max-height 0.2s ease;
+
 	overflow: scroll;
 
 	${({ $isVisible }) =>

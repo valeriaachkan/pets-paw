@@ -12,7 +12,7 @@ const initialParams = {
     has_breeds: '1',
 }
 
-export const Breeds = () => {
+export const BreedsPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [queryParams, setQueryParams] = useState(initialParams);

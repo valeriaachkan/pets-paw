@@ -18,7 +18,7 @@ width: 775px;
 `;
 
 
-export const Home = () => {
+export const HomePage = () => {
     return (
         <StyledCoverSection>
             <CoverImage src={coverImg}/>

@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import { Breeds } from '../pages/Breeds';
-import { Home } from '../pages/Home';
-import { Voting } from '../pages/Voting';
+import { BreedDetailsPage } from '../pages/BreedDetailsPage';
+import { BreedsPage } from '../pages/BreedsPage';
+import { HomePage } from '../pages/HomePage';
+import { VotingPage } from '../pages/VotingPage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Subheader } from './Subheader/Subheader';
 
@@ -10,10 +11,10 @@ const App = () => {
 		<div>
 			<Routes>
 				<Route path="/" element={<SharedLayout />}>
-					<Route index element={<Home />} />
-					<Route path="voting" element={<Voting />} />
-					<Route path="breeds" element={<Breeds />} />
-					<Route path="breeds/:breedId" element={<div>Cat</div>} />
+					<Route index element={<HomePage />} />
+					<Route path="voting" element={<VotingPage />} />
+					<Route path="breeds" element={<BreedsPage />} />
+					<Route path="breeds/:breedId" element={<BreedDetailsPage />} />
 					<Route path="gallery" element={<div>Gallery</div>} />
 					<Route path="favorites" element={<Subheader></Subheader>} />
 					<Route

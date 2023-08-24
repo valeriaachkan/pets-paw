@@ -35,9 +35,29 @@ ul {
 button {
   font-family: 'Jost', sans-serif;
 }
-/* 
-img {
+
+
+/* Styles for Swiper Pagination */
+.swiper-pagination {
+  position: absolute;
+  height: fit-content;
+  background-color: white;
   display: block;
-  max-width: 100%;
-  height: auto;
-} */
+  right: 0;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet {
+  padding: 5px !important;
+  display: inline-block;
+  background-color: #FBE0DC !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #FF868E !important;
+}
