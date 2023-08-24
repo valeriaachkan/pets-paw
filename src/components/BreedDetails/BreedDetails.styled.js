@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-	margin-top: 20px;
-`;
-
 export const BreedInfoContainer = styled.fieldset`
 	margin: 0;
 	margin-top: 20px;
@@ -53,7 +49,8 @@ export const BreedFeatureItem = styled.li`
 		margin-bottom: 10px;
 	}
 `;
-export const BreedFeatureName = styled.p`
+export const BreedFeatureName = styled.span`
+	display: block;
 	color: #1d1d1d;
 	font-size: 16px;
 	font-weight: 500;

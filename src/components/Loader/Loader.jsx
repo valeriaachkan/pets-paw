@@ -1,9 +1,9 @@
 import ClipLoader from 'react-spinners/ClipLoader';
 
 const override = {
-    position: 'absolute',
-	top: '90px',
-	left: '260px',
+    position: 'relative',
+    left: '40%',
+    marginTop: '100px',
 };
 
 export const Loader = ({loading}) => {

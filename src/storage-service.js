@@ -8,13 +8,12 @@ const saveCatToLocalStorage = (key, { id, url }) => {
 			localStorage.setItem(key, serializedData);
 			return;
 		}
-		if (savedData.includes({ id, url })) {
+		if (savedData.every((cat) => cat.id !== id)) {
+			savedData.push({ id, url });
+			serializedData = JSON.stringify(savedData);
+			localStorage.setItem(key, serializedData);
 			return;
 		}
-
-		savedData.push({ id, url });
-		serializedData = JSON.stringify(savedData);
-		localStorage.setItem(key, serializedData);
 	} catch (error) {
 		console.error('Get state error: ', error.message);
 	}
@@ -32,7 +31,7 @@ const loadCatsFromLocalStorage = (key) => {
 const removeCatFromLocalStorage = (key, id) => {
 	try {
 		const savedData = loadCatsFromLocalStorage(key);
-		savedData.filter((savedId) => savedId !== id);
+		savedData.filter((cat) => cat.id !== id);
 		const serializedData = JSON.stringify(savedData);
 
 		localStorage.setItem(key, serializedData);

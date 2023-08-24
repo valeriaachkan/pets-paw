@@ -3,9 +3,8 @@ import styled from 'styled-components';
 
 export const Gallery = styled.ul`
 	display: grid;
-	grid-template-columns: repeat(3, 30.5%);
+	grid-template-columns: repeat(3, 31.25%);
 	grid-gap: 20px;
-	margin-top: 20px;
 
 	${({ $gridLength }) =>
 		$gridLength === 5
@@ -97,6 +96,10 @@ export const GalleryItem = styled.li`
 	&:nth-child(20) {
 		grid-area: 12 / 3 / 13 / 4;
 	}
+
+	&:hover > ${Wrapper} {
+		visibility: visible;
+	}
 `;
 
 export const Image = styled.img`
@@ -129,5 +132,28 @@ export const BreedLink = styled(Link)`
 
 	&:hover > ${Wrapper} {
 		visibility: visible;
+	}
+`;
+
+export const FavButton = styled.div`
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #fff;
+	fill: #ff868e;
+
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&.active {
+		background-color: #ff868e;
+		fill: #fff;
 	}
 `;

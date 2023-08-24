@@ -1,10 +1,9 @@
-import { SlideSwiper } from "../SlideSwiper/SlideSwiper"
-import { BreedFeatureItem, BreedFeatureName, BreedFeatures, BreedFeatureText, BreedInfoContainer, BreedName, BreedSubtitle, Container, FeaturesWrapper, Wrapper } from "./BreedDetails.styled"
 
-export const BreedDetails = ({breedInfo, breedImages}) => {
+import { BreedFeatureItem, BreedFeatureName, BreedFeatures, BreedFeatureText, BreedInfoContainer, BreedName, BreedSubtitle, FeaturesWrapper, Wrapper } from "./BreedDetails.styled"
+
+export const BreedDetails = ({breedInfo}) => {
     return(
-        <Container>
-            <SlideSwiper images={breedImages} />
+        <>
             <BreedInfoContainer>
             <BreedName>{breedInfo.name}</BreedName>
             <Wrapper>
@@ -21,6 +20,6 @@ export const BreedDetails = ({breedInfo, breedImages}) => {
                 </BreedFeatures>
             </Wrapper>
             </BreedInfoContainer>
-        </Container>
+        </>
     )
 }

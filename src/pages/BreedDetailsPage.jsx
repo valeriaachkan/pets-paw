@@ -6,6 +6,7 @@ import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
 import {fetchBreedDetails, fetchCats} from '../CatApi-service';
 import { BreedDetails } from "../components/BreedDetails/BreedDetails";
+import { SlideSwiper } from "../components/SlideSwiper/SlideSwiper";
 
 
 
@@ -43,11 +44,11 @@ export const BreedDetailsPage = () => {
         <>
             <Subheader/>
             <ContentSection>
-                <ToolBar title={'breeds'} >
-                </ToolBar>
+                <ToolBar title={'breeds'} />
                 {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
                 {loading && <Loader loading={loading}/>}
-                {breedDetails && breedImages && <BreedDetails breedInfo={breedDetails} breedImages={breedImages}/>}
+                {breedImages && <SlideSwiper images={breedImages} />}
+                {breedDetails && <BreedDetails breedInfo={breedDetails} breedImages={breedImages}/>}
             </ContentSection>
         </>
     )

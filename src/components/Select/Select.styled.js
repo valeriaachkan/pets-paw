@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SelectContainer = styled.div`
 	position: relative;
 	margin: 0;
+	width: 100%;
 `;
 
 export const SelectLabelButton = styled.button`
@@ -22,6 +23,14 @@ export const SelectLabelButton = styled.button`
 	&:hover {
 		border: 2px solid #fbe0dc;
 	}
+
+	${({ $isInverse }) =>
+		$isInverse === true &&
+		`		
+		border-color: #fff;
+		background-color: #FFFFFF;
+		color: #1D1D1D;
+		`}
 `;
 
 export const DropdownStyle = styled.div`
@@ -50,6 +59,11 @@ export const DropdownStyle = styled.div`
 		`	max-height: 40px;
 			visibility: hidden;
 		`}
+
+	${({ $isInverse }) =>
+		$isInverse === true &&
+		`		background-color: #FFFFFF;
+		`}
 `;
 export const DropdownItem = styled.div`
 	padding-bottom: 6px;
@@ -58,4 +72,10 @@ export const DropdownItem = styled.div`
 	line-height: 1.5;
 
 	cursor: pointer;
+
+	${({ $isInverse }) =>
+		$isInverse === true &&
+		`		
+		color: #1D1D1D;
+		`}
 `;

@@ -4,23 +4,21 @@ import { ReactComponent as LikeIcon}from '../../assets/fav-20.svg';
 import { useState } from "react";
 
 
-const GridGallery = ({cats, breed, fav, addToFav,removeFromFav}) => {
+const GridItem = ({cat, breed, fav, addToFav, removeFromFav}) => {
 const [isLiked, setIsLiked] = useState(false);
 
 const handleClickOnFavButton = (cat) => {
     if(!isLiked) {
-        addToFav(cat);
+        addToFav( cat);
         setIsLiked(true);
         return;
     } 
-    removeFromFav(cat);
+    removeFromFav( cat);
     setIsLiked(false);
 }
 
     return(
-        <Gallery $gridLength={cats.length}>
-            {cats.map(cat => (
-                <GalleryItem key={cat.id}>
+ <GalleryItem key={cat.id}>
                     {breed && cat.breeds.map(breed => (<BreedLink key={breed.id} to={`/breeds/${breed.id}`}>
                         <Image src={cat.url} alt='Photo of a Cat'/>
                         <Wrapper>
@@ -35,10 +33,8 @@ const handleClickOnFavButton = (cat) => {
                                 {!isLiked && <LikeIcon/>}
                             </FavButton>
                         </Wrapper></>}
-                </GalleryItem>))}
-        </Gallery>
+                </GalleryItem>
     )
 }
 
-export {GridGallery};
-
+export {GridItem};

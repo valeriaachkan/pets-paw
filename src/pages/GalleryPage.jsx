@@ -3,20 +3,22 @@ import { fetchCats } from "../CatApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
-import SortBreeds from "../components/SortBreeds/SortBreeds";
+import SortGallery from "../components/SortGallery/SortGallery";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
+import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../storage-service";
 
 const initialParams = {
     limit: '10',
     has_breeds: '1',
 }
 
-export const BreedsPage = () => {
+export const GalleryPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [queryParams, setQueryParams] = useState(initialParams);
     const [catsList, setCatsList] = useState([]);
+
 
     useEffect(() => {
         async function getCats() {
@@ -41,16 +43,24 @@ export const BreedsPage = () => {
         setQueryParams({...queryParams, ...newParam});
     }
 
+    const addToFav = (catInfo) => {
+        saveCatToLocalStorage('Favorites', catInfo);
+    saveActionToLocalStorage('Favorites', catInfo.id);
+    }
+    const removeFromFav = (catInfo) => {
+        removeCatFromLocalStorage('Favorites', catInfo);
+    saveActionToLocalStorage('Favorites', catInfo.id, 'remove');
+    }
+
     return (
         <>
             <Subheader/>
             <ContentSection>
-                <ToolBar title={'breeds'} >
-                    <SortBreeds handleQueryParams={handleQueryParams}/>
-                </ToolBar>
+                <ToolBar title={'gallery'} />
+                <SortGallery handleQueryParams={handleQueryParams}/>
                 {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
                 {loading && <Loader loading={loading}/>}
-                {!loading && catsList && <GridGallery cats={catsList} breed={true}></GridGallery>}
+                {!loading && catsList && <GridGallery cats={catsList} fav={true} addToFav={addToFav} removeFromFav={removeFromFav}></GridGallery>}
             </ContentSection>
         </>
     )

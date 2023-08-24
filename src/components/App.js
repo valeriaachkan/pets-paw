@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { BreedDetailsPage } from '../pages/BreedDetailsPage';
 import { BreedsPage } from '../pages/BreedsPage';
+import { GalleryPage } from '../pages/GalleryPage';
 import { HomePage } from '../pages/HomePage';
 import { VotingPage } from '../pages/VotingPage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
@@ -15,7 +16,7 @@ const App = () => {
 					<Route path="voting" element={<VotingPage />} />
 					<Route path="breeds" element={<BreedsPage />} />
 					<Route path="breeds/:breedId" element={<BreedDetailsPage />} />
-					<Route path="gallery" element={<div>Gallery</div>} />
+					<Route path="gallery" element={<GalleryPage />} />
 					<Route path="favorites" element={<Subheader></Subheader>} />
 					<Route
 						path="likes"
