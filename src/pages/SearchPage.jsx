@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCats } from "../catApi-service";
+import { fetchCats } from "../services/catApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Notification } from "../components/Notification/Notification";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
-import {selectValues} from '../selectValues';
+import {selectValues} from '../components/Select/selectValues';
 
 
 export const SearchPage = () => {
@@ -31,17 +31,17 @@ export const SearchPage = () => {
 useEffect(()=>{
     async function searchCatsByQuery() {
         if(searchQueryIds.length === 0) {
+            setCatsList([]);
             return;
         }
         try {
             const searchParams = {
-                limit: '10',
+                limit: '20',
                 breed_ids: searchQueryIds,
             }
             setLoading(true);
             setError(false);
             const cats = await fetchCats(searchParams);
-            console.log('cats',cats);
             setCatsList(cats);
         } catch (error) {
             setError(true);

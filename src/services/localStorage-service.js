@@ -40,10 +40,10 @@ const removeCatFromLocalStorage = (key, { id }) => {
 	}
 };
 
-const saveActionToLocalStorage = (type, id) => {
+const saveActionToLocalStorage = (type, id, action) => {
 	const date = new Date();
 	const time = date.toLocaleTimeString().slice(0, 5);
-	const newAction = { type, id, time };
+	const newAction = { type, id, action, time };
 
 	try {
 		let serializedData;

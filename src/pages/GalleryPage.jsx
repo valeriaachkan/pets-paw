@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchCats } from "../catApi-service";
+import { fetchCats } from "../services/catApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
@@ -8,7 +8,7 @@ import { Notification } from "../components/Notification/Notification";
 import SortGallery from "../components/SortGallery/SortGallery";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
-import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../storage-service";
+import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../services/localStorage-service";
 
 const initialParams = {
     limit: '5',
@@ -35,11 +35,9 @@ export const GalleryPage = () => {
         }
         getCats()}
     ,[queryParams])
-    console.log(queryParams);
 
     const handleQueryParams = (type, value) => {
         const newParam = {[type]: value};
-        console.log('newParam',newParam);
         setQueryParams({...queryParams, ...newParam});
     }
 

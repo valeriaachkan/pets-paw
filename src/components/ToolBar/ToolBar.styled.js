@@ -9,13 +9,22 @@ export const Container = styled.div`
 `;
 
 export const BackButton = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 40px;
 	height: 40px;
 	border: 0;
 	border-radius: 10px;
 	background: #fbe0dc;
+	fill: #ff868e;
 
 	cursor: pointer;
+
+	&:hover {
+		background-color: #ff868e;
+		fill: #fff;
+	}
 `;
 
 export const Title = styled.h3`

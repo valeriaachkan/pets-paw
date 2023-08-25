@@ -9,8 +9,8 @@ import { useState } from "react";
 
 
 export const Subheader = ({value}) => {
-    const [searchQuery, setSearchQuery] = useState(value ?? '');
-    const navigate = useNavigate()
+const [searchQuery, setSearchQuery] = useState(value ?? '');
+const navigate = useNavigate()
 
 
 const handleChange = e => {
@@ -28,16 +28,16 @@ const handleSearchButtonClick = (e) => {
 }
 
     return (
-<Container>
-    <InputOverlay>
-    <SearchInput value={searchQuery} type='text' placeholder="Search for breeds by name" onChange={(e)=>handleChange(e)} onKeyPress={handleKeyPress}/>
-    <SearchButton onClick={(e)=>handleSearchButtonClick(e)}><SearchIcon/></SearchButton>
-    </InputOverlay>
-    <UserRemarks>
-        <li><PageLink to='/favorites'><LikeIcon/></PageLink></li>
-        <li><PageLink to='/likes'><FavIcon/></PageLink></li>
-        <li><PageLink to='/dislikes'><DislikeIcon/></PageLink></li>
-    </UserRemarks>
-</Container>
+    <Container>
+        <InputOverlay>
+            <SearchInput value={searchQuery} type='text' placeholder="Search for breeds by name" onChange={(e)=>handleChange(e)} onKeyPress={handleKeyPress}/>
+            <SearchButton onClick={(e)=>handleSearchButtonClick(e)}><SearchIcon/></SearchButton>
+        </InputOverlay>
+        <UserRemarks>
+            <li><PageLink to='/favorites'><LikeIcon/></PageLink></li>
+            <li><PageLink to='/likes'><FavIcon/></PageLink></li>
+            <li><PageLink to='/dislikes'><DislikeIcon/></PageLink></li>
+        </UserRemarks>
+    </Container>
     )
 }

@@ -1,8 +1,8 @@
 import ContentSection from "../components/ContentSection/ContentSection"
 import { Subheader } from "../components/Subheader/Subheader"
-import { fetchCatToVote } from "../catApi-service";
+import { fetchCatToVote } from "../services/catApi-service";
 import { useEffect, useState } from "react";
-import { saveCatToLocalStorage, saveActionToLocalStorage, loadActionsFromLocalStorage} from '../storage-service';
+import { saveCatToLocalStorage, saveActionToLocalStorage, loadActionsFromLocalStorage} from '../services/localStorage-service';
 import { ActionsSection } from '../components/ActionsSection/ActionsSection';
 import { ImageOverlay } from '../components/ImageOverlay/ImageOverlay';
 import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
@@ -17,7 +17,6 @@ export const VotingPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const actionsHistory = loadActionsFromLocalStorage();
-    // console.log(actionsHistory)
     
 useEffect(() => {
     async function getCatToVote() {
@@ -38,7 +37,7 @@ useEffect(() => {
 
 const onReactionButtonClick = (type, catInfo) => {
     saveCatToLocalStorage(type, catInfo);
-    saveActionToLocalStorage(type, catInfo.id);
+    saveActionToLocalStorage(type, catInfo.id, 'add');
     setIsVoted(!isVoted);
 }
     return (

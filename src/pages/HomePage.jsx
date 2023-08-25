@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import coverImg from '../assets/girl-and-pet.png';
 
-
 const StyledCoverSection = styled.div`
 position: relative;
 width: 100%;

@@ -4,18 +4,18 @@ import {ReactComponent as Placeholder} from '../../assets/placeholder.svg';
 import {ReactComponent as ErrorIcon} from '../../assets/error-20.svg';
 import {ReactComponent as SuccesIcon} from '../../assets/success-20.svg';
 import { DropContainer, FileName, Span, StatusNotification, Text, UploadPhotoButton, Wrapper } from './Modal.styled';
-import { uploadCatImage } from '../../catApi-service';
+import { uploadCatImage } from '../../services/catApi-service';
 import { ClipLoader } from 'react-spinners';
 
 
 const thumbsContainer = {
-    position: 'absolute',
-    top: '242px',
-    right: '61px',
-    width:'82%',
-height: '280px',
-borderRadius: '10px',
-pointerEvents: 'none',
+  position: 'absolute',
+  top: '242px',
+  right: '61px',
+  width:'82%',
+  height: '280px',
+  borderRadius: '10px',
+  pointerEvents: 'none',
 };
 
 const thumb = {
@@ -40,8 +40,8 @@ const img = {
 };
 
 const override = {
-    display: 'block',
-    margin: '40px auto'
+  display: 'block',
+  margin: '40px auto'
 };
 
 

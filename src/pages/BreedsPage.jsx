@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchCats } from "../catApi-service";
+import { fetchCats } from "../services/catApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";

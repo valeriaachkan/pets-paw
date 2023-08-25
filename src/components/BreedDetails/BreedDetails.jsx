@@ -1,4 +1,3 @@
-
 import { BreedFeatureItem, BreedFeatureName, BreedFeatures, BreedFeatureText, BreedInfoContainer, BreedName, BreedSubtitle, FeaturesWrapper, Wrapper } from "./BreedDetails.styled"
 
 export const BreedDetails = ({breedInfo}) => {

@@ -2,7 +2,7 @@ import { Select } from '../Select/Select';
 import { SortContainer, SortOrder, } from './SortBreeds.styled';
 import { ReactComponent as SortIcon}from '../../assets/sort-20.svg';
 import { ReactComponent as SortRevertIcon}from '../../assets/sort-revert-20.svg';
-import {selectValues} from '../../selectValues';
+import {selectValues} from '../Select/selectValues';
 
 const SortBreeds = ({handleQueryParams, handleSortClick, isDefSort}) => {
 

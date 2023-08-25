@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const Container = styled.div`
 position: relative;
 width: 100%;
@@ -12,8 +11,6 @@ background-color: #FFFFFF;
 
 overflow-y: scroll;
 `;
-
-
 
 const ContentSection = ({ children }) => {
     return (

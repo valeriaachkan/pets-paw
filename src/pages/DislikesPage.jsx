@@ -3,7 +3,7 @@ import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Notification } from "../components/Notification/Notification";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
-import { loadCatsFromLocalStorage} from "../storage-service";
+import { loadCatsFromLocalStorage} from "../services/localStorage-service";
 
 
 export const DislikesPage = () => {
