@@ -18,10 +18,11 @@ export const SearchPage = () => {
     const [error, setError] = useState(false);
 
     useEffect(()=>{
-        if(query === undefined) {
-            return;
-        }
         function findBreedIdByQuery(data, query) {
+            if(query === undefined) {
+                return;
+            }
+            
             let matchedIds = [];
             const breeds = data.breeds;
             breeds.forEach(({key, label}) => (label.toLowerCase().includes(query.toLowerCase()) ? matchedIds.push(key) : null));
