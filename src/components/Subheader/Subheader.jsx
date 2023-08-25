@@ -30,7 +30,7 @@ const handleSearchButtonClick = (e) => {
     return (
     <Container>
         <InputOverlay>
-            <SearchInput value={searchQuery} type='text' placeholder="Search for breeds by name" onChange={(e)=>handleChange(e)} onKeyPress={handleKeyPress} name="searchQuery"/>
+            <SearchInput value={searchQuery} type='text' placeholder="Search for breeds by name" onChange={(e)=>handleChange(e)} onKeyPress={handleKeyPress} name="searchQuery" autoComplete="off"/>
             <SearchButton onClick={(e)=>handleSearchButtonClick(e)}><SearchIcon/></SearchButton>
         </InputOverlay>
         <UserRemarks>
