@@ -47,7 +47,7 @@ const saveActionToLocalStorage = (type, id, action) => {
 
 	try {
 		let serializedData;
-		const actionsHistory = loadActionsFromLocalStorage();
+		let actionsHistory = loadActionsFromLocalStorage();
 
 		if (actionsHistory === null) {
 			serializedData = JSON.stringify([newAction]);
@@ -55,7 +55,11 @@ const saveActionToLocalStorage = (type, id, action) => {
 			return;
 		}
 
-		actionsHistory.push(newAction);
+		if (actionsHistory.length > 10) {
+			actionsHistory = actionsHistory.splice(0, 10);
+		}
+
+		actionsHistory = [newAction, ...actionsHistory];
 		serializedData = JSON.stringify(actionsHistory);
 		localStorage.setItem('User Actions', serializedData);
 	} catch (error) {

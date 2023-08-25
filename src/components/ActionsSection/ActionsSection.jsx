@@ -6,16 +6,25 @@ import { ReactComponent as DislikeIcon }from '../../assets/dislike-30.svg';
 
 
 const ActionsSection = ({actions}) => {
-    const visibleActions = actions.slice(actions.length-5,actions.length);
-    console.log(visibleActions.reverse());
     return (
         <ActionList>
-            {visibleActions.map((action) =>
-            <ActionItem key={nanoid()}>
-                <Time>{action.time}</Time>
-                <Text>Image ID: <Id>{action.id}</Id> was added to {action.type}</Text>
-                {action.type === 'Favorites' ?  <FavIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#FF868E'}}/> : action.type === 'Likes' ? <LikeIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#97EAB9'}}/> : <DislikeIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#FFD280'}}/>}
-                </ActionItem>)}
+            {actions.map(({ type, id, action, time }) =>
+            <div key={nanoid()}>
+                {action === 'add' && 
+                    <ActionItem key={nanoid()}>
+                        <Time>{time}</Time>
+                        <Text>Image ID: <Id>{id}</Id> was added to {type}</Text>
+                        {type === 'Favorites' ?  <FavIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#FF868E'}}/> : type === 'Likes' ? <LikeIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#97EAB9'}}/> : <DislikeIcon style={{width:'20px', height:'20px', position: 'absolute', top: '20px', right: '20px',fill: '#FFD280'}}/>}
+                    </ActionItem>
+                }
+                {action === 'remove' && 
+                    <ActionItem key={nanoid()}>
+                        <Time>{time}</Time>
+                        <Text>Image ID: <Id>{id}</Id> was removed from {type}</Text>
+                    </ActionItem>
+                }
+            </div>
+            )}
         </ActionList>
     )
 

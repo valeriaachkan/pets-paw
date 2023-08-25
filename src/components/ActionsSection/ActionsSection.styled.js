@@ -5,7 +5,7 @@ export const ActionList = styled.ul`
 	flex-direction: column;
 	gap: 10px;
 	width: 100%;
-	max-height: 270px;
+	max-height: 690px;
 	overflow: hidden;
 `;
 export const ActionItem = styled.li`
