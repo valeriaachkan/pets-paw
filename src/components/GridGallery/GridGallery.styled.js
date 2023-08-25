@@ -61,22 +61,22 @@ export const GalleryItem = styled.li`
 		grid-area: 4 / 2 / 5 / 3;
 	}
 	&:nth-child(8) {
-		grid-area: 4 / 3 / 6 / 4;
-	}
-	&:nth-child(9) {
-		grid-area: 6 / 3 / 7 / 4;
-	}
-	&:nth-child(10) {
 		grid-area: 5 / 1 / 7 / 3;
 	}
+	&:nth-child(9) {
+		grid-area: 4 / 3 / 6 / 4;
+	}
+	&:nth-child(10) {
+		grid-area: 6 / 3 / 7 / 4;
+	}
 	&:nth-child(11) {
-		grid-area: 7 / 1 / 9 / 2;
+		grid-area: 7 / 3 / 8 / 4;
 	}
 	&:nth-child(12) {
 		grid-area: 7 / 2 / 8 / 3;
 	}
 	&:nth-child(13) {
-		grid-area: 7 / 3 / 8 / 4;
+		grid-area: 7 / 1 / 9 / 2;
 	}
 	&:nth-child(14) {
 		grid-area: 8 / 2 / 10 / 4;

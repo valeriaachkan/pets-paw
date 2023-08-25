@@ -66,7 +66,7 @@ export const GalleryPage = () => {
                 <SortGallery handleQueryParams={handleQueryParams} handleUpdateClick={handleUpdateClick}/>
                 {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
-                {catsList.length === 0 && <Notification notFound={true}/>}
+                {!loading && catsList.length === 0 && <Notification notFound={true}/>}
                 {!loading && catsList && <GridGallery cats={catsList} fav={true} addToFav={addToFav} removeFromFav={removeFromFav}></GridGallery>}
             </ContentSection>
         </>

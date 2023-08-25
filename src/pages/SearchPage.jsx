@@ -60,7 +60,7 @@ useEffect(()=>{
                 {error && <Notification error={true}/>}
                 {query && <p style={{color: '#8C8C8C', fontSize: '20px', marginBottom: '20px'}}>Search results for: <span style={{color: '#1D1D1D', fontWeight: '500'}}>{query}</span></p>}
                 {loading && <Loader loading={loading}/>}
-                {catsList.length === 0 && <Notification notFound={true}/>}
+                {!loading && catsList.length === 0 && <Notification notFound={true}/>}
                 {!loading && catsList && <GridGallery cats={catsList} breed={true} addToFav={() => {}} removeFromFav={() => {}}></GridGallery>}
             </ContentSection>
         </>

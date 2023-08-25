@@ -29,3 +29,6 @@ const SortGallery = ({handleQueryParams, handleUpdateClick}) => {
 }
 
 export default SortGallery;
+
+
+

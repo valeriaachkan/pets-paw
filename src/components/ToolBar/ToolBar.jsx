@@ -5,10 +5,13 @@ import { useParams } from 'react-router-dom';
 
 const ToolBar = ({title, children}) => {
     const { breedId } = useParams();
+    const handleGoBack = () => {
+        window.history.back();
+      };
 
     return (
         <Container>
-            <BackButton><BackArrow/></BackButton>
+            <BackButton onClick={handleGoBack}><BackArrow/></BackButton>
             <Title $isBreedId={breedId && true}>{title}</Title>
             {breedId && <Subtitle>{breedId}</Subtitle>}
             {children}

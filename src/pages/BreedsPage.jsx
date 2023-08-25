@@ -56,7 +56,7 @@ export const BreedsPage = () => {
                 </ToolBar>
                 {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
-                {catsList.length === 0 && <Notification notFound={true}/>}
+                {!loading && catsList.length === 0 && <Notification notFound={true}/>}
                 {!loading && catsList && isDefSort && <GridGallery cats={catsList} breed={true}></GridGallery>}
                 {!loading && catsList && !isDefSort &&<GridGallery cats={[...catsList].reverse()} breed={true}></GridGallery>}
             </ContentSection>

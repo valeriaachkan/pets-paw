@@ -43,9 +43,7 @@ export const UpdateButton = styled.button`
 
 	cursor: pointer;
 
-	&:hover,
-	&:focus,
-	&.active {
+	&:hover {
 		background-color: #ff868e;
 		fill: #fff;
 	}
