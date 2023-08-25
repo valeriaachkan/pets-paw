@@ -9,7 +9,7 @@ const ActionsSection = ({actions}) => {
     return (
         <ActionList>
             {actions.map(({ type, id, action, time }) =>
-            <div key={nanoid()}>
+            <>
                 {action === 'add' && 
                     <ActionItem key={nanoid()}>
                         <Time>{time}</Time>
@@ -23,7 +23,7 @@ const ActionsSection = ({actions}) => {
                         <Text>Image ID: <Id>{id}</Id> was removed from {type}</Text>
                     </ActionItem>
                 }
-            </div>
+            </>
             )}
         </ActionList>
     )
