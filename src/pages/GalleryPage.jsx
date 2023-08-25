@@ -3,6 +3,7 @@ import { fetchCats } from "../CatApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
+import { Modal } from "../components/Modal/Modal";
 import SortGallery from "../components/SortGallery/SortGallery";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
@@ -56,7 +57,9 @@ export const GalleryPage = () => {
         <>
             <Subheader/>
             <ContentSection>
-                <ToolBar title={'gallery'} />
+                <ToolBar title={'gallery'}>
+                    <Modal />
+                </ToolBar>
                 <SortGallery handleQueryParams={handleQueryParams}/>
                 {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
                 {loading && <Loader loading={loading}/>}

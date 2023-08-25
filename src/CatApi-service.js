@@ -33,7 +33,17 @@ async function fetchBreedDetails(breedId) {
 	return data;
 }
 
-export { fetchCatToVote, fetchCats, fetchBreedDetails };
+async function uploadCatImage(file) {
+	let formData = new FormData();
+	formData.append('file', file);
+
+	const url = `${baseUrl}images/upload`;
+	const response = await axios.post(url, formData);
+
+	return response;
+}
+
+export { fetchCatToVote, fetchCats, fetchBreedDetails, uploadCatImage };
 
 //?api_key=${key}
 

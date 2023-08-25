@@ -52,25 +52,3 @@ export const Subtitle = styled.p`
 	line-height: 1.5;
 	letter-spacing: 2px;
 `;
-
-export const UploadButton = styled.button`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: auto;
-
-	padding: 12px 30px;
-	border-radius: 10px;
-	background-color: #fbe0dc;
-	border: 0;
-
-	color: #ff868e;
-	text-transform: uppercase;
-	font-size: 12px;
-	font-weight: 500;
-	line-height: 1.33;
-	letter-spacing: 2px;
-	fill: #ff868e;
-
-	cursor: pointer;
-`;

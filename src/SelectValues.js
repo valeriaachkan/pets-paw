@@ -1,5 +1,5 @@
 export const selectValues = {
-	sortLimit: [
+	limit: [
 		{
 			key: '5',
 			label: 'Limit: 5',
@@ -16,6 +16,12 @@ export const selectValues = {
 			key: '20',
 			label: 'Limit: 20',
 		},
+	],
+	sortLimit: [
+		{ key: '5 items per page', label: '5' },
+		{ key: '10 items per page', label: '10' },
+		{ key: '15 items per page', label: '15' },
+		{ key: '20 items per page', label: '20' },
 	],
 	order: [
 		{
