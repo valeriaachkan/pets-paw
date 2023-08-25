@@ -43,11 +43,11 @@ export const GalleryPage = () => {
 
     const addToFav = (catInfo) => {
         saveCatToLocalStorage('Favorites', catInfo);
-    saveActionToLocalStorage('Favorites', catInfo.id);
+        saveActionToLocalStorage('Favorites', catInfo.id, 'add');
     }
     const removeFromFav = (catInfo) => {
         removeCatFromLocalStorage('Favorites', catInfo);
-    saveActionToLocalStorage('Favorites', catInfo.id, 'remove');
+        saveActionToLocalStorage('Favorites', catInfo.id, 'remove');
     }
 
     const handleUpdateClick = () => {
