@@ -41,6 +41,9 @@ export const SearchButton = styled.button`
 	top: 10px;
 	right: 10px;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 40px;
 	height: 40px;
 	border: 0;
@@ -50,12 +53,12 @@ export const SearchButton = styled.button`
 	cursor: pointer;
 `;
 
-export const UserPics = styled.ul`
+export const UserRemarks = styled.ul`
 	display: flex;
 	gap: 10px;
 `;
 
-export const Link = styled(NavLink)`
+export const PageLink = styled(NavLink)`
 	display: flex;
 	justify-content: center;
 	align-items: center;

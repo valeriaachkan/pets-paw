@@ -4,14 +4,14 @@ import {ReactComponent as Placeholder} from '../../assets/placeholder.svg';
 import {ReactComponent as ErrorIcon} from '../../assets/error-20.svg';
 import {ReactComponent as SuccesIcon} from '../../assets/success-20.svg';
 import { DropContainer, FileName, Span, StatusNotification, Text, UploadPhotoButton, Wrapper } from './Modal.styled';
-import { uploadCatImage } from '../../CatApi-service';
-import { Loader } from '../Loader/Loader';
+import { uploadCatImage } from '../../catApi-service';
+import { ClipLoader } from 'react-spinners';
 
 
 const thumbsContainer = {
     position: 'absolute',
-    top: '252px',
-    right: '10%',
+    top: '242px',
+    right: '61px',
     width:'82%',
 height: '280px',
 borderRadius: '10px',
@@ -35,8 +35,13 @@ const thumbInner = {
 const img = {
   display: 'block',
   width: '100%',
-  height: '100%',
+  height: '280px',
   objectFit: 'cover',
+};
+
+const override = {
+    display: 'block',
+    margin: '40px auto'
 };
 
 
@@ -57,6 +62,7 @@ export const UploadContainer =() =>{
         
       })),
        setError(false));
+       setIsUploaded(false);
     },
     
   });
@@ -116,7 +122,15 @@ export const UploadContainer =() =>{
     </div>
     {!loading && files.length === 0 && <FileName>No file selected</FileName>}
     {!loading && !error && files.length > 0 && <Wrapper><FileName>Image File Name: {files.map(file => file.name)}</FileName><UploadPhotoButton onClick={()=>handlePhotoUploading(...files)}>Upload photo</UploadPhotoButton></Wrapper>}
-    {loading && <Loader loading={loading}/>}
+    {loading && <ClipLoader
+        color={'#FF868E'}
+        loading={loading}
+        size={60}
+        cssOverride={override}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        speedMultiplier= "0.5"
+    />}
     {error && <Wrapper><FileName>Image File Name: {files.map(file => file.name)}</FileName><StatusNotification><ErrorIcon/>No Cat found - try a different one</StatusNotification></Wrapper>}
     {!loading && isUploaded && <StatusNotification><SuccesIcon/> Thanks for the Upload - Cat found!</StatusNotification>}
     </div>

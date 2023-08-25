@@ -1,10 +1,10 @@
 import { Select } from '../Select/Select';
 import { SelectLabel, SortContainer, UpdateButton, Wrapper, } from './SortGallery.styled';
-import {selectValues} from '../../SelectValues';
+import {selectValues} from '../../selectValues';
 import { ReactComponent as UpdateIcon}from '../../assets/update-20.svg';
 
-const SortGallery = ({handleQueryParams}) => {
-    // console.log(handleQueryParams);
+const SortGallery = ({handleQueryParams, handleUpdateClick}) => {
+    
     return (
         <SortContainer>
             <Wrapper>
@@ -13,7 +13,7 @@ const SortGallery = ({handleQueryParams}) => {
             </Wrapper>
             <Wrapper>
                 <SelectLabel>Type</SelectLabel>
-                <Select handleQueryParams={handleQueryParams} label={'Static'} values={selectValues.type} type={'mime_types'} inverse={true}/>
+                <Select handleQueryParams={handleQueryParams} label={'All'} values={selectValues.type} type={'mime_types'} inverse={true}/>
             </Wrapper>
             <Wrapper>
                 <SelectLabel>Breed</SelectLabel>
@@ -22,7 +22,7 @@ const SortGallery = ({handleQueryParams}) => {
             <Wrapper>
                 <SelectLabel>Limit</SelectLabel>
                 <Select handleQueryParams={handleQueryParams} label={'5 items per page'} values={selectValues.sortLimit} type={'limit'} inverse={true} width={'245px'}/>
-            <UpdateButton><UpdateIcon/></UpdateButton>
+            <UpdateButton onClick={()=>handleUpdateClick()}><UpdateIcon/></UpdateButton>
             </Wrapper>
         </SortContainer>
     )

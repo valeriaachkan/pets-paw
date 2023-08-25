@@ -139,9 +139,6 @@ export const BreedLink = styled(Link)`
 `;
 
 export const FavButton = styled.div`
-	// position: absolute;
-	// bottom: 20px;
-	// right: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

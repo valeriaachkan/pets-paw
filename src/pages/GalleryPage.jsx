@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { fetchCats } from "../CatApi-service";
+import { fetchCats } from "../catApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Modal } from "../components/Modal/Modal";
+import { Notification } from "../components/Notification/Notification";
 import SortGallery from "../components/SortGallery/SortGallery";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
 import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../storage-service";
 
 const initialParams = {
-    limit: '10',
-    has_breeds: '1',
+    limit: '5',
 }
 
 export const GalleryPage = () => {
@@ -19,7 +19,6 @@ export const GalleryPage = () => {
     const [error, setError] = useState(false);
     const [queryParams, setQueryParams] = useState(initialParams);
     const [catsList, setCatsList] = useState([]);
-
 
     useEffect(() => {
         async function getCats() {
@@ -53,6 +52,10 @@ export const GalleryPage = () => {
     saveActionToLocalStorage('Favorites', catInfo.id, 'remove');
     }
 
+    const handleUpdateClick = () => {
+        setQueryParams({...queryParams});
+    }
+
     return (
         <>
             <Subheader/>
@@ -60,9 +63,10 @@ export const GalleryPage = () => {
                 <ToolBar title={'gallery'}>
                     <Modal />
                 </ToolBar>
-                <SortGallery handleQueryParams={handleQueryParams}/>
-                {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
+                <SortGallery handleQueryParams={handleQueryParams} handleUpdateClick={handleUpdateClick}/>
+                {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
+                {catsList.length === 0 && <Notification notFound={true}/>}
                 {!loading && catsList && <GridGallery cats={catsList} fav={true} addToFav={addToFav} removeFromFav={removeFromFav}></GridGallery>}
             </ContentSection>
         </>

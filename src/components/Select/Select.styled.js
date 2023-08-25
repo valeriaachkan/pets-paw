@@ -52,7 +52,7 @@ export const DropdownStyle = styled.div`
 
 	transition: max-height 0.2s ease;
 
-	overflow: scroll;
+	overflow-y: scroll;
 
 	${({ $isVisible }) =>
 		$isVisible !== true &&

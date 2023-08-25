@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
+import { Notification } from "../components/Notification/Notification";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
 import { loadCatsFromLocalStorage, removeCatFromLocalStorage, saveActionToLocalStorage } from "../storage-service";
@@ -21,6 +22,7 @@ export const FavoritesPage = () => {
             <Subheader/>
             <ContentSection>
                 <ToolBar title={'favorites'} />
+                {catsList.length === 0 && <Notification notFound={true}/>}
                 {catsList && <GridGallery cats={catsList} fav={true} addToFav={() => {}} removeFromFav={removeFromFav} liked={true}></GridGallery>}
             </ContentSection>
         </>

@@ -10,7 +10,7 @@ padding: 20px;
 margin-top: 10px;
 background-color: #FFFFFF;
 
-overflow: scroll;
+overflow-y: scroll;
 `;
 
 

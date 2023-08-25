@@ -15,14 +15,12 @@ export const SortOrder = styled.button`
 	border-radius: 10px;
 	background-color: #f8f8f7;
 	border: 2px solid #f8f8f7;
-	fill: #8c8c8c;
 
 	cursor: pointer;
 
 	&:hover,
 	&:focus,
 	&.active {
-		fill: #ff868e;
 		border: 2px solid #fbe0dc;
 	}
 `;

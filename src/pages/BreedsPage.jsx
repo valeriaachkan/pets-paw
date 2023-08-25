@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { fetchCats } from "../CatApi-service";
+import { fetchCats } from "../catApi-service";
 import ContentSection from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
+import { Notification } from "../components/Notification/Notification";
 import SortBreeds from "../components/SortBreeds/SortBreeds";
 import { Subheader } from "../components/Subheader/Subheader"
 import ToolBar from "../components/ToolBar/ToolBar";
 
 const initialParams = {
-    limit: '10',
+    limit: '5',
     has_breeds: '1',
 }
 
@@ -17,6 +18,7 @@ export const BreedsPage = () => {
     const [error, setError] = useState(false);
     const [queryParams, setQueryParams] = useState(initialParams);
     const [catsList, setCatsList] = useState([]);
+    const [isDefSort, setIsDefSort] = useState(true);
 
     useEffect(() => {
         async function getCats() {
@@ -31,26 +33,32 @@ export const BreedsPage = () => {
                 setLoading(false);
             }
         }
-        getCats()}
+        getCats();
+    }
     ,[queryParams])
-    console.log(queryParams);
 
     const handleQueryParams = (type, value) => {
         const newParam = {[type]: value};
-        console.log('newParam',newParam);
         setQueryParams({...queryParams, ...newParam});
     }
+
+    const handleSortClick = (order) => {
+       return order === 'default' ? setIsDefSort(true) : setIsDefSort(false);
+    }
+
 
     return (
         <>
             <Subheader/>
             <ContentSection>
                 <ToolBar title={'breeds'} >
-                    <SortBreeds handleQueryParams={handleQueryParams}/>
+                    <SortBreeds handleQueryParams={handleQueryParams} handleSortClick={handleSortClick} isDefSort={isDefSort}/>
                 </ToolBar>
-                {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
+                {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
-                {!loading && catsList && <GridGallery cats={catsList} breed={true}></GridGallery>}
+                {catsList.length === 0 && <Notification notFound={true}/>}
+                {!loading && catsList && isDefSort && <GridGallery cats={catsList} breed={true}></GridGallery>}
+                {!loading && catsList && !isDefSort &&<GridGallery cats={[...catsList].reverse()} breed={true}></GridGallery>}
             </ContentSection>
         </>
     )

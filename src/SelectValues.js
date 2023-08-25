@@ -18,10 +18,10 @@ export const selectValues = {
 		},
 	],
 	sortLimit: [
-		{ key: '5 items per page', label: '5' },
-		{ key: '10 items per page', label: '10' },
-		{ key: '15 items per page', label: '15' },
-		{ key: '20 items per page', label: '20' },
+		{ key: '5', label: '5 items per page' },
+		{ key: '10', label: '10 items per page' },
+		{ key: '15', label: '15 items per page' },
+		{ key: '20', label: '20 items per page' },
 	],
 	order: [
 		{
@@ -33,7 +33,7 @@ export const selectValues = {
 			label: 'Ascending',
 		},
 		{
-			key: 'Desc',
+			key: 'DESC',
 			label: 'Descending',
 		},
 	],
@@ -53,7 +53,7 @@ export const selectValues = {
 	],
 	breeds: [
 		{
-			key: 'none',
+			key: '',
 			label: 'All breeds',
 		},
 		{

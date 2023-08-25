@@ -36,9 +36,10 @@ export const Lightbox = styled.div`
 	right: 30px;
 	width: 683.5px;
 	height: calc(100% - 60px);
-	padding: 100px 20px;
+	padding: 90px 20px 20px;
 	border-radius: 20px;
 	background: #f8f8f7;
+	overflow-y: scroll;
 `;
 
 export const CloseButton = styled.button`
@@ -118,6 +119,8 @@ export const UploadPhotoButton = styled.div`
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
 
 	cursor: pointer;
 `;
@@ -133,8 +136,6 @@ export const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
-	margin-bottom: ;
 `;
 
 export const DropContainer = styled.div`
@@ -167,5 +168,5 @@ export const StatusNotification = styled.div`
 	line-height: 1.5;
 	border-radius: 10px;
 	background: #fff;
-	margin-top: 10px;
+	margin-top: 20px;
 `;

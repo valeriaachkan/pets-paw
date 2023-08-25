@@ -8,9 +8,9 @@ const override = {
 
 export const Loader = ({loading}) => {
     return (<ClipLoader
-        color={'#FBE0DC'}
+        color={'#FF868E'}
         loading={loading}
-        size={120}
+        size={100}
         cssOverride={override}
         aria-label="Loading Spinner"
         data-testid="loader"

@@ -6,6 +6,7 @@ import { FavoritesPage } from '../pages/FavoritesPage';
 import { GalleryPage } from '../pages/GalleryPage';
 import { HomePage } from '../pages/HomePage';
 import { LikesPage } from '../pages/LikesPage';
+import { SearchPage } from '../pages/SearchPage';
 import { VotingPage } from '../pages/VotingPage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
@@ -22,6 +23,8 @@ const App = () => {
 					<Route path="favorites" element={<FavoritesPage />} />
 					<Route path="likes" element={<LikesPage />} />
 					<Route path="dislikes" element={<DislikesPage />} />
+					<Route path="search/" element={<SearchPage />} />
+					<Route path="search/:query" element={<SearchPage />} />
 					<Route path="*" element={<Navigate to="/" />} />
 				</Route>
 			</Routes>

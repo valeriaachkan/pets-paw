@@ -1,6 +1,6 @@
 import ContentSection from "../components/ContentSection/ContentSection"
 import { Subheader } from "../components/Subheader/Subheader"
-import { fetchCatToVote } from "../CatApi-service";
+import { fetchCatToVote } from "../catApi-service";
 import { useEffect, useState } from "react";
 import { saveCatToLocalStorage, saveActionToLocalStorage, loadActionsFromLocalStorage} from '../storage-service';
 import { ActionsSection } from '../components/ActionsSection/ActionsSection';
@@ -8,6 +8,7 @@ import { ImageOverlay } from '../components/ImageOverlay/ImageOverlay';
 import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
 import { Loader } from "../components/Loader/Loader";
 import ToolBar from "../components/ToolBar/ToolBar";
+import { Notification } from "../components/Notification/Notification";
 
 
 export const VotingPage = () => {
@@ -45,7 +46,7 @@ const onReactionButtonClick = (type, catInfo) => {
             <Subheader/>
             <ContentSection>
                 <ToolBar title={'voting'}/>
-                {error && <p>Sorry, something went wrong! Try reloading the page!</p>}
+                {error && <Notification error={true}/>}
                 <ReactionButtons catInfo={catInfo} onButtonClick={onReactionButtonClick}>{loading && <Loader loading={loading}/>}{catInfo && !loading && <ImageOverlay url={catInfo.url}/>}</ReactionButtons>
                 {actionsHistory && <ActionsSection actions={actionsHistory}/>}
             </ContentSection>
