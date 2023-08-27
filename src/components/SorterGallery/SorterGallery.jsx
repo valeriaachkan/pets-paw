@@ -1,9 +1,9 @@
 import { Select } from '../Select/Select';
-import { SelectLabel, SortContainer, UpdateButton, Wrapper, } from './SortGallery.styled';
-import {selectValues} from '../Select/selectValues';
+import { SelectLabel, SortContainer, UpdateButton, Wrapper, } from './SorterGallery.styled';
+import {selectValues} from '../../constants/selectValues';
 import { ReactComponent as UpdateIcon}from '../../assets/update-20.svg';
 
-const SortGallery = ({handleQueryParams, handleUpdateClick}) => {
+export const SorterGallery = ({handleQueryParams, handleUpdateClick}) => {
     
     return (
         <SortContainer>
@@ -27,8 +27,6 @@ const SortGallery = ({handleQueryParams, handleUpdateClick}) => {
         </SortContainer>
     )
 }
-
-export default SortGallery;
 
 
 

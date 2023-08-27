@@ -1,10 +1,10 @@
 import { Select } from '../Select/Select';
-import { SortContainer, SortOrder, } from './SortBreeds.styled';
+import { SortContainer, SortOrder, } from './SorterBreeds.styled';
 import { ReactComponent as SortIcon}from '../../assets/sort-20.svg';
 import { ReactComponent as SortRevertIcon}from '../../assets/sort-revert-20.svg';
-import {selectValues} from '../Select/selectValues';
+import {selectValues} from '../../constants/selectValues';
 
-const SortBreeds = ({handleQueryParams, handleSortClick, isDefSort}) => {
+export const SorterBreeds = ({handleQueryParams, handleSortClick, isDefSort}) => {
 
     return (
         <SortContainer>
@@ -15,5 +15,3 @@ const SortBreeds = ({handleQueryParams, handleSortClick, isDefSort}) => {
         </SortContainer>
     )
 }
-
-export default SortBreeds;

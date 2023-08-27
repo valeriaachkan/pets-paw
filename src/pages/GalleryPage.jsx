@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { fetchCats } from "../services/catApi-service";
-import ContentSection from "../components/ContentSection/ContentSection"
+import {ContentSection} from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Modal } from "../components/Modal/Modal";
 import { Notification } from "../components/Notification/Notification";
-import SortGallery from "../components/SortGallery/SortGallery";
+import {SorterGallery} from "../components/SorterGallery/SorterGallery";
 import { Subheader } from "../components/Subheader/Subheader"
-import ToolBar from "../components/ToolBar/ToolBar";
+import {ToolBar} from "../components/ToolBar/ToolBar";
 import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../services/localStorage-service";
 
 const initialParams = {
@@ -61,7 +61,7 @@ export const GalleryPage = () => {
                 <ToolBar title={'gallery'}>
                     <Modal />
                 </ToolBar>
-                <SortGallery handleQueryParams={handleQueryParams} handleUpdateClick={handleUpdateClick}/>
+                <SorterGallery handleQueryParams={handleQueryParams} handleUpdateClick={handleUpdateClick}/>
                 {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
                 {!loading && catsList.length === 0 && <Notification notFound={true}/>}

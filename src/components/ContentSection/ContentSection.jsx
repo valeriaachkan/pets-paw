@@ -12,12 +12,10 @@ background-color: #FFFFFF;
 overflow-y: scroll;
 `;
 
-const ContentSection = ({ children }) => {
+export const ContentSection = ({ children }) => {
     return (
         <Container>
             {children}
         </Container>
     )
-}
-
-export default ContentSection;
+};

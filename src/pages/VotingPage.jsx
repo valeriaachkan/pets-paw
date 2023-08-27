@@ -1,4 +1,4 @@
-import ContentSection from "../components/ContentSection/ContentSection"
+import {ContentSection} from "../components/ContentSection/ContentSection"
 import { Subheader } from "../components/Subheader/Subheader"
 import { fetchCatToVote } from "../services/catApi-service";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { ActionsSection } from '../components/ActionsSection/ActionsSection';
 import { ImageOverlay } from '../components/ImageOverlay/ImageOverlay';
 import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
 import { Loader } from "../components/Loader/Loader";
-import ToolBar from "../components/ToolBar/ToolBar";
+import {ToolBar} from "../components/ToolBar/ToolBar";
 import { Notification } from "../components/Notification/Notification";
 
 

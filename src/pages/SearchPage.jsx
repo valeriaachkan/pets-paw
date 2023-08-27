@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCats } from "../services/catApi-service";
-import ContentSection from "../components/ContentSection/ContentSection"
+import {ContentSection} from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Notification } from "../components/Notification/Notification";
 import { Subheader } from "../components/Subheader/Subheader"
-import ToolBar from "../components/ToolBar/ToolBar";
-import {selectValues} from '../components/Select/selectValues';
+import {ToolBar} from "../components/ToolBar/ToolBar";
+import {selectValues} from '../constants/selectValues';
 
 
 export const SearchPage = () => {

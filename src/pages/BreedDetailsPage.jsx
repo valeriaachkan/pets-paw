@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ContentSection from "../components/ContentSection/ContentSection";
+import {ContentSection} from "../components/ContentSection/ContentSection";
 import { Loader } from "../components/Loader/Loader";
 import { Subheader } from "../components/Subheader/Subheader"
-import ToolBar from "../components/ToolBar/ToolBar";
+import {ToolBar} from "../components/ToolBar/ToolBar";
 import {fetchBreedDetails, fetchCats} from '../services/catApi-service';
-import { BreedDetails } from "../components/BreedDetails/BreedDetails";
+import { BreedDetailsContainer } from "../components/BreedDetailsContainer/BreedDetailsContainer";
 import { SlideSwiper } from "../components/SlideSwiper/SlideSwiper";
 import { Notification } from "../components/Notification/Notification";
 
@@ -44,7 +44,7 @@ export const BreedDetailsPage = () => {
                 {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
                 {breedImages && <SlideSwiper images={breedImages} />}
-                {breedDetails && <BreedDetails breedInfo={breedDetails} breedImages={breedImages}/>}
+                {breedDetails && <BreedDetailsContainer breedInfo={breedDetails} breedImages={breedImages}/>}
             </ContentSection>
         </>
     )

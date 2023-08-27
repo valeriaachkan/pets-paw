@@ -3,7 +3,7 @@ import { ReactComponent as BackArrow }from '../../assets/back-20.svg';
 import { useParams } from 'react-router-dom';
 
 
-const ToolBar = ({title, children}) => {
+export const ToolBar = ({title, children}) => {
     const { breedId } = useParams();
     const handleGoBack = () => {
         window.history.back();
@@ -19,5 +19,4 @@ const ToolBar = ({title, children}) => {
     )
 }
 
-export default ToolBar;
 

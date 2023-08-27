@@ -1,6 +1,6 @@
-import { BreedFeatureItem, BreedFeatureName, BreedFeatures, BreedFeatureText, BreedInfoContainer, BreedName, BreedSubtitle, FeaturesWrapper, Wrapper } from "./BreedDetails.styled"
+import { BreedFeatureItem, BreedFeatureName, BreedFeatures, BreedFeatureText, BreedInfoContainer, BreedName, BreedSubtitle, FeaturesWrapper, Wrapper } from "./BreedDetailsContainer.styled"
 
-export const BreedDetails = ({breedInfo}) => {
+export const BreedDetailsContainer = ({breedInfo}) => {
     return(
         <>
             <BreedInfoContainer>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchCats } from "../services/catApi-service";
-import ContentSection from "../components/ContentSection/ContentSection"
+import {ContentSection} from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Notification } from "../components/Notification/Notification";
-import SortBreeds from "../components/SortBreeds/SortBreeds";
+import {SorterBreeds} from "../components/SorterBreeds/SorterBreeds";
 import { Subheader } from "../components/Subheader/Subheader"
-import ToolBar from "../components/ToolBar/ToolBar";
+import {ToolBar} from "../components/ToolBar/ToolBar";
 
 const initialParams = {
     limit: '5',
@@ -52,7 +52,7 @@ export const BreedsPage = () => {
             <Subheader/>
             <ContentSection>
                 <ToolBar title={'breeds'} >
-                    <SortBreeds handleQueryParams={handleQueryParams} handleSortClick={handleSortClick} isDefSort={isDefSort}/>
+                    <SorterBreeds handleQueryParams={handleQueryParams} handleSortClick={handleSortClick} isDefSort={isDefSort}/>
                 </ToolBar>
                 {error && <Notification error={true}/>}
                 {loading && <Loader loading={loading}/>}
