@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { devices } from '../../constants/breakpoints';
 
 export const Container = styled.div`
-	// position: relative;
 	width: 100%;
 	height: fit-content;
 	margin-bottom: -15px;
@@ -24,12 +23,6 @@ export const ReactionList = styled.ul`
 	border: 4px solid #fff;
 	border-radius: 22px;
 	overflow: hidden;
-
-	// @media only screen and ${devices.sm} {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 30.5%;
-	// }
 `;
 
 export const ReactionButton = styled.li`

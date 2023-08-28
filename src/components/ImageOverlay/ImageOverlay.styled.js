@@ -3,7 +3,6 @@ import { devices } from '../../constants/breakpoints';
 
 export const Overlay = styled.div`
 	width: 100%;
-	// height: auto;
 	height: 200px;
 	border-radius: 20px;
 

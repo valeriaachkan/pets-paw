@@ -24,8 +24,6 @@ export const BreedName = styled.legend`
 
 export const Wrapper = styled.div`
 	padding: 0 40px 20px;
-	// border-radius: 20px;
-	// border: 2px solid #fbe0dc;
 `;
 
 export const BreedSubtitle = styled.p`

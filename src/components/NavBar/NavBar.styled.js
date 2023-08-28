@@ -32,7 +32,6 @@ export const ImageThumb = styled.div`
 		align-items: center;
 		justify-content: center;
 		height: 150px;
-		// height: 198px;
 		border-radius: 20px;
 		border: 4px solid rgba(255, 255, 255, 0.6);
 		background-color: #ffd280;

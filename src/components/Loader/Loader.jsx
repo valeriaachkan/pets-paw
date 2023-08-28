@@ -1,6 +1,5 @@
 import ClipLoader from 'react-spinners/ClipLoader';
 import { LoaderContainer } from './Loader.styled';
-// import { devices } from '../../constants/breakpoints';
 
 
 const override = {
