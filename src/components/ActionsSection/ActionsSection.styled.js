@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../constants/breakpoints';
 
 export const ActionList = styled.ul`
 	display: flex;
@@ -10,13 +11,16 @@ export const ActionList = styled.ul`
 `;
 export const ActionItem = styled.li`
 	position: relative;
-	display: flex;
-	gap: 20px;
-	align-items: center;
 	width: 100%;
 	padding: 15px;
 	border-radius: 10px;
 	background-color: #f8f8f7;
+
+	@media only screen and ${devices.sm} {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
 `;
 
 export const Time = styled.time`
@@ -37,4 +41,11 @@ export const Text = styled.p`
 export const Id = styled.span`
 	color: #1d1d1d;
 	font-weight: 500;
+`;
+
+export const Wrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 10px;
 `;

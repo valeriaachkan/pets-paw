@@ -1,5 +1,6 @@
 import Modal from '@mui/material/Modal';
 import styled from 'styled-components';
+import { devices } from '../../constants/breakpoints';
 
 export const Container = styled.div`
 	margin-left: auto;
@@ -24,6 +25,16 @@ export const UploadButton = styled.button`
 	fill: #ff868e;
 
 	cursor: pointer;
+
+	@media only screen and ${devices.onlyXs} {
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	@media only screen and ${devices.md} and (max-width: 1439px) {
+		width: 100%;
+		margin-top: 10px;
+	}
 `;
 
 export const ModalUpload = styled(Modal)`
@@ -40,6 +51,14 @@ export const Lightbox = styled.div`
 	border-radius: 20px;
 	background: #f8f8f7;
 	overflow-y: scroll;
+
+	@media only screen and ${devices.onlySm} {
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+	}
 `;
 
 export const CloseButton = styled.button`
@@ -155,6 +174,11 @@ export const DropContainer = styled.div`
 		border-color: #FF868E;
 		background-color: #FBE0DC;
 		`}
+
+	@media only screen and ${devices.onlySm} {
+		width: 320px;
+		padding: 60px 60px;
+	}
 `;
 
 export const StatusNotification = styled.div`

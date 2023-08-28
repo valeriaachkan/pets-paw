@@ -5,8 +5,10 @@ import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
 import { Notification } from "../components/Notification/Notification";
 import {SorterBreeds} from "../components/SorterBreeds/SorterBreeds";
-import { Subheader } from "../components/Subheader/Subheader"
 import {ToolBar} from "../components/ToolBar/ToolBar";
+import { PageWrapper } from "../components/PageWrapper/PageWrapper";
+import { MenuSection } from "../components/MenuSection/MenuSection";
+import { MainSection } from "../components/MainSection/MainSection";
 
 const initialParams = {
     limit: '5',
@@ -48,18 +50,20 @@ export const BreedsPage = () => {
 
 
     return (
-        <>
-            <Subheader/>
-            <ContentSection>
-                <ToolBar title={'breeds'} >
-                    <SorterBreeds handleQueryParams={handleQueryParams} handleSortClick={handleSortClick} isDefSort={isDefSort}/>
-                </ToolBar>
-                {error && <Notification error={true}/>}
-                {loading && <Loader loading={loading}/>}
-                {!loading && catsList.length === 0 && <Notification notFound={true}/>}
-                {!loading && catsList && isDefSort && <GridGallery cats={catsList} breed={true}></GridGallery>}
-                {!loading && catsList && !isDefSort &&<GridGallery cats={[...catsList].reverse()} breed={true}></GridGallery>}
-            </ContentSection>
-        </>
+        <PageWrapper>
+            <MenuSection/>
+            <MainSection>
+                <ContentSection>
+                    <ToolBar title={'breeds'} >
+                        <SorterBreeds handleQueryParams={handleQueryParams} handleSortClick={handleSortClick} isDefSort={isDefSort}/>
+                    </ToolBar>
+                    {error && <Notification error={true}/>}
+                    {loading && <Loader loading={loading}/>}
+                    {!loading && catsList.length === 0 && <Notification notFound={true}/>}
+                    {!loading && catsList && isDefSort && <GridGallery cats={catsList} breed={true}></GridGallery>}
+                    {!loading && catsList && !isDefSort &&<GridGallery cats={[...catsList].reverse()} breed={true}></GridGallery>}
+                </ContentSection>
+            </MainSection>
+        </PageWrapper>
     )
 }

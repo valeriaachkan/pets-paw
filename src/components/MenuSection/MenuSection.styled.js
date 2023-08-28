@@ -1,25 +1,22 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-export const PageContainer = styled.div`
-	display: grid;
-	grid-template-columns: 8.5% 32.5% 9.5% 49.5%;
-	grid-template-rows: 100% 30px;
-	margin: 0 auto;
-	padding: 30px;
-	height: 100vh;
-	max-width: 1440px;
-`;
+import { devices } from '../../constants/breakpoints';
 
 export const SideSection = styled.section`
-	grid-column: 2;
-	grid-row: 1;
-`;
+	@media only screen and ${devices.onlySm} {
+		display: none;
 
-export const MainSection = styled.section`
-	grid-column: 4;
-	grid-row: 1;
-	max-height: 100%;
+		${({ $isVisible }) =>
+			$isVisible === true &&
+			`		
+	    display: block;
+		`}
+	}
+
+	@media only screen and ${devices.md} {
+		grid-column: 2;
+		grid-row: 1;
+	}
 `;
 
 export const HomeLogo = styled(Link)`
@@ -32,7 +29,11 @@ export const Heading = styled.h1`
 	font-weight: 500;
 	line-height: 1.3;
 	margin-bottom: 10px;
-	margin-top: 85px;
+	margin-top: 80px;
+
+	@media only screen and ${devices.md} {
+		margin-top: 85px;
+	}
 `;
 
 export const Subheading = styled.h2`

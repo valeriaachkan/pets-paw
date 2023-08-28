@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { CloseButton, Container, Lightbox, ModalUpload, PrivacyLink, Subtitle, Title, UploadButton } from './Modal.styled';
+import { CloseButton, Container, Lightbox, ModalUpload, PrivacyLink, Subtitle, Title, UploadButton } from './UploadModal.styled';
 import { ReactComponent as UploadIcon }from '../../assets/upload-16.svg';
 import { ReactComponent as CloseIcon }from '../../assets/close-20.svg';
 import { UploadContainer } from './UploadContainer';
 
-export const Modal = ()  => {
+export const UploadModal = ()  => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -15,8 +15,7 @@ export const Modal = ()  => {
       <ModalUpload
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-labelledby="upload"
       >
         <Lightbox>
             <CloseButton onClick={handleClose}><CloseIcon/></CloseButton>

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {ContentSection} from "../components/ContentSection/ContentSection";
 import { Loader } from "../components/Loader/Loader";
-import { Subheader } from "../components/Subheader/Subheader"
 import {ToolBar} from "../components/ToolBar/ToolBar";
 import {fetchBreedDetails, fetchCats} from '../services/catApi-service';
 import { BreedDetailsContainer } from "../components/BreedDetailsContainer/BreedDetailsContainer";
 import { SlideSwiper } from "../components/SlideSwiper/SlideSwiper";
 import { Notification } from "../components/Notification/Notification";
+import { PageWrapper } from "../components/PageWrapper/PageWrapper";
+import { MenuSection } from "../components/MenuSection/MenuSection";
+import { MainSection } from "../components/MainSection/MainSection";
 
 
 
@@ -37,15 +39,17 @@ export const BreedDetailsPage = () => {
     ,[breedId])
 
     return (
-        <>
-            <Subheader/>
-            <ContentSection>
-                <ToolBar title={'breeds'} />
-                {error && <Notification error={true}/>}
-                {loading && <Loader loading={loading}/>}
-                {breedImages && <SlideSwiper images={breedImages} />}
-                {breedDetails && <BreedDetailsContainer breedInfo={breedDetails} breedImages={breedImages}/>}
-            </ContentSection>
-        </>
+        <PageWrapper>
+            <MenuSection/>
+            <MainSection>
+                <ContentSection>
+                    <ToolBar title={'breeds'} />
+                    {error && <Notification error={true}/>}
+                    {loading && <Loader loading={loading}/>}
+                    {breedImages && <SlideSwiper images={breedImages} />}
+                    {breedDetails && <BreedDetailsContainer breedInfo={breedDetails} breedImages={breedImages}/>}
+                </ContentSection>
+            </MainSection>
+        </PageWrapper>
     )
 }

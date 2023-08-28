@@ -3,12 +3,14 @@ import { fetchCats } from "../services/catApi-service";
 import {ContentSection} from "../components/ContentSection/ContentSection"
 import { GridGallery } from "../components/GridGallery/GridGallery";
 import { Loader } from "../components/Loader/Loader";
-import { Modal } from "../components/Modal/Modal";
+import { UploadModal } from "../components/UploadModal/UploadModal";
 import { Notification } from "../components/Notification/Notification";
 import {SorterGallery} from "../components/SorterGallery/SorterGallery";
-import { Subheader } from "../components/Subheader/Subheader"
 import {ToolBar} from "../components/ToolBar/ToolBar";
 import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../services/localStorage-service";
+import { PageWrapper } from "../components/PageWrapper/PageWrapper";
+import { MenuSection } from "../components/MenuSection/MenuSection";
+import { MainSection } from "../components/MainSection/MainSection";
 
 const initialParams = {
     limit: '5',
@@ -55,11 +57,12 @@ export const GalleryPage = () => {
     }
 
     return (
-        <>
-            <Subheader/>
+        <PageWrapper>
+            <MenuSection/>
+            <MainSection>
             <ContentSection>
                 <ToolBar title={'gallery'}>
-                    <Modal />
+                    <UploadModal />
                 </ToolBar>
                 <SorterGallery handleQueryParams={handleQueryParams} handleUpdateClick={handleUpdateClick}/>
                 {error && <Notification error={true}/>}
@@ -67,6 +70,7 @@ export const GalleryPage = () => {
                 {!loading && catsList.length === 0 && <Notification notFound={true}/>}
                 {!loading && catsList && <GridGallery cats={catsList} fav={true} addToFav={addToFav} removeFromFav={removeFromFav}></GridGallery>}
             </ContentSection>
-        </>
+            </MainSection>
+        </PageWrapper>
     )
 }

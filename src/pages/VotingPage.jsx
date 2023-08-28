@@ -1,5 +1,4 @@
 import {ContentSection} from "../components/ContentSection/ContentSection"
-import { Subheader } from "../components/Subheader/Subheader"
 import { fetchCatToVote } from "../services/catApi-service";
 import { useEffect, useState } from "react";
 import { saveCatToLocalStorage, saveActionToLocalStorage, loadActionsFromLocalStorage} from '../services/localStorage-service';
@@ -9,7 +8,10 @@ import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
 import { Loader } from "../components/Loader/Loader";
 import {ToolBar} from "../components/ToolBar/ToolBar";
 import { Notification } from "../components/Notification/Notification";
-
+import {PageWrapper} from '../components/PageWrapper/PageWrapper';
+import {MenuSection} from '../components/MenuSection/MenuSection';
+import {MainSection} from '../components/MainSection/MainSection';
+import MediaQuery from 'react-responsive';
 
 export const VotingPage = () => {
     const [catInfo, setCatInfo] = useState(null);
@@ -41,15 +43,25 @@ const onReactionButtonClick = (type, catInfo) => {
     setIsVoted(!isVoted);
 }
     return (
-        <>
-            <Subheader/>
+        <PageWrapper>
+            <MenuSection/>
+            <MainSection>
             <ContentSection>
                 <ToolBar title={'voting'}/>
                 {error && <Notification error={true}/>}
-                <ReactionButtons catInfo={catInfo} onButtonClick={onReactionButtonClick}>{loading && <Loader loading={loading}/>}{catInfo && !loading && <ImageOverlay url={catInfo.url}/>}</ReactionButtons>
+                <ReactionButtons catInfo={catInfo} onButtonClick={onReactionButtonClick}>
+                    <MediaQuery maxWidth={767}>
+                        {loading && <Loader loading={loading} size={50}/>}
+                    </MediaQuery>
+                    <MediaQuery minWidth={768}>
+                        {loading && <Loader loading={loading} size={100}/>}
+                    </MediaQuery>
+                    {catInfo && !loading && <ImageOverlay url={catInfo.url}/>}
+                </ReactionButtons>
                 {actionsHistory && <ActionsSection actions={actionsHistory}/>}
             </ContentSection>
-        </>
+            </MainSection>
+        </PageWrapper>
     )
 }
 

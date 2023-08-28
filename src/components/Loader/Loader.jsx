@@ -1,19 +1,27 @@
 import ClipLoader from 'react-spinners/ClipLoader';
+import { LoaderContainer } from './Loader.styled';
+// import { devices } from '../../constants/breakpoints';
+
 
 const override = {
-    position: 'relative',
-    left: '40%',
-    marginTop: '100px',
+    // position: 'relative',
+    // top: '50%',
+    // left: '40%',
+    // margin: '0 auto',
+    // marginTop: '100px',
 };
 
-export const Loader = ({loading}) => {
-    return (<ClipLoader
-        color={'#FF868E'}
-        loading={loading}
-        size={100}
-        cssOverride={override}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-        speedMultiplier= "0.5"
-    />)
-}
+export const Loader = ({loading, size}) => {
+    return (
+    <LoaderContainer>
+        <ClipLoader
+            color={'#FF868E'}
+            loading={loading}
+            size={size}
+            cssOverride={override}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            speedMultiplier= "0.5"
+        />
+    </LoaderContainer>
+)}

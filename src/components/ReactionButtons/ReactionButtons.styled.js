@@ -1,33 +1,51 @@
 import styled from 'styled-components';
+import { devices } from '../../constants/breakpoints';
 
 export const Container = styled.div`
-	position: relative;
+	// position: relative;
 	width: 100%;
-	min-height: 404px;
-	margin-bottom: 12px;
+	height: fit-content;
+	margin-bottom: -15px;
+
+	@media only screen and ${devices.md} {
+		min-height: 404px;
+		margin-bottom: 12px;
+	}
 `;
 
 export const ReactionList = styled.ul`
-	position: absolute;
-	bottom: 0;
-	left: 30.5%;
+	position: relative;
+	bottom: 30px;
+	width: fit-content;
+	margin: 0 auto;
 	display: flex;
 	gap: 4px;
 	background-color: #fff;
 	border: 4px solid #fff;
 	border-radius: 22px;
 	overflow: hidden;
+
+	// @media only screen and ${devices.sm} {
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 30.5%;
+	// }
 `;
 
 export const ReactionButton = styled.li`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	fill: #fff;
 
 	&:hover {
 		opacity: 0.5;
+	}
+
+	@media only screen and ${devices.sm} {
+		width: 80px;
+		height: 80px;
 	}
 `;

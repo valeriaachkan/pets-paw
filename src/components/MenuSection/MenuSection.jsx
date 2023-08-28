@@ -1,24 +1,19 @@
-import { PageContainer, SideSection, MainSection, HomeLogo, Heading, Subheading, Caption} from "./SharedLayout.styled";
-import { Outlet } from "react-router";
+import { SideSection, HomeLogo, Heading, Subheading, Caption} from "./MenuSection.styled";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import { NavBar } from "../NavBar/NavBar";
 
-export const SharedLayout = () => {
+export const MenuSection = ({home = false}) => {
     return (
-    <PageContainer>
-        <SideSection>
+        <SideSection $isVisible={home}>
             <HomeLogo to="/"><Logo /></HomeLogo>
     
             <Heading>Hi!👋</Heading>
             <Subheading>Welcome to MacPaw Bootcamp 2023</Subheading>
 
             <Caption>Lets start using The Cat API</Caption>
-            <NavBar/>
-            
+            <NavBar />
         </SideSection>
-        <MainSection>
-            <Outlet />
-        </MainSection>
-    </PageContainer>
 )
 }
+
+

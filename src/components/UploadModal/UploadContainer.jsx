@@ -3,7 +3,7 @@ import {useDropzone} from 'react-dropzone';
 import {ReactComponent as Placeholder} from '../../assets/placeholder.svg';
 import {ReactComponent as ErrorIcon} from '../../assets/error-20.svg';
 import {ReactComponent as SuccesIcon} from '../../assets/success-20.svg';
-import { DropContainer, FileName, Span, StatusNotification, Text, UploadPhotoButton, Wrapper } from './Modal.styled';
+import { DropContainer, FileName, Span, StatusNotification, Text, UploadPhotoButton, Wrapper } from './UploadModal.styled';
 import { uploadCatImage } from '../../services/catApi-service';
 import { ClipLoader } from 'react-spinners';
 
