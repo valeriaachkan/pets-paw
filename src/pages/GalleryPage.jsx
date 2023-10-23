@@ -7,10 +7,12 @@ import { UploadModal } from "../components/UploadModal/UploadModal";
 import { Notification } from "../components/Notification/Notification";
 import {SorterGallery} from "../components/SorterGallery/SorterGallery";
 import {ToolBar} from "../components/ToolBar/ToolBar";
-import { removeCatFromLocalStorage, saveActionToLocalStorage, saveCatToLocalStorage } from "../services/localStorage-service";
 import { PageWrapper } from "../components/PageWrapper/PageWrapper";
 import { MenuSection } from "../components/MenuSection/MenuSection";
 import { MainSection } from "../components/MainSection/MainSection";
+import { useDispatch } from "react-redux";
+import { addCatToFavorites, removeCat } from "../redux/catsSlice";
+import { addAction } from "../redux/actionsSlice";
 
 const initialParams = {
     limit: '5',
@@ -21,6 +23,7 @@ export const GalleryPage = () => {
     const [error, setError] = useState(false);
     const [queryParams, setQueryParams] = useState(initialParams);
     const [catsList, setCatsList] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         async function getCats() {
@@ -44,13 +47,13 @@ export const GalleryPage = () => {
     }
 
     const addToFav = (catInfo) => {
-        saveCatToLocalStorage('Favorites', catInfo);
-        saveActionToLocalStorage('Favorites', catInfo.id, 'add');
-    }
+       dispatch(addCatToFavorites(catInfo));
+       dispatch(addAction({type: 'favorites', id: catInfo.id, action: 'add' }))
+         }
     const removeFromFav = (catInfo) => {
-        removeCatFromLocalStorage('Favorites', catInfo);
-        saveActionToLocalStorage('Favorites', catInfo.id, 'remove');
-    }
+       dispatch(removeCat(catInfo.id));
+       dispatch(addAction({type: 'favorites', id: catInfo.id, action: 'remove' }))
+        }
 
     const handleUpdateClick = () => {
         setQueryParams({...queryParams});

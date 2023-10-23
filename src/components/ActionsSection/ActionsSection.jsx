@@ -4,11 +4,15 @@ import { ActionItem, ActionList, Id, Text, Time, Wrapper } from "./ActionsSectio
 import { ReactComponent as FavIcon }from '../../assets/fav-30.svg';
 import { ReactComponent as LikeIcon }from '../../assets/like-30.svg';
 import { ReactComponent as DislikeIcon }from '../../assets/dislike-30.svg';
+import { useSelector } from "react-redux";
+import { selectActions } from "../../redux/selectors";
 
 
-const ActionsSection = ({actions}) => {
-    return (
-        <ActionList>
+
+const ActionsSection = () => {
+    const actions = useSelector(selectActions);
+
+    return  actions && <ActionList>
             {actions.map(({ type, id, action, time }) =>
             <>
                 {action === 'add' && 
@@ -40,9 +44,9 @@ const ActionsSection = ({actions}) => {
                     </MediaQuery>
                 }
             </>
-            )}
+         )}
         </ActionList>
-    )
+    
 
 }
 

@@ -1,7 +1,6 @@
 import {ContentSection} from "../components/ContentSection/ContentSection"
 import { fetchCatToVote } from "../services/catApi-service";
 import { useEffect, useState } from "react";
-import { saveCatToLocalStorage, saveActionToLocalStorage, loadActionsFromLocalStorage} from '../services/localStorage-service';
 import { ActionsSection } from '../components/ActionsSection/ActionsSection';
 import { ImageOverlay } from '../components/ImageOverlay/ImageOverlay';
 import { ReactionButtons } from '../components/ReactionButtons/ReactionButtons';
@@ -12,13 +11,16 @@ import {PageWrapper} from '../components/PageWrapper/PageWrapper';
 import {MenuSection} from '../components/MenuSection/MenuSection';
 import {MainSection} from '../components/MainSection/MainSection';
 import MediaQuery from 'react-responsive';
+import { useDispatch } from "react-redux";
+import { addCatToDislikes, addCatToFavorites, addCatToLikes } from "../redux/catsSlice";
+import { addAction } from "../redux/actionsSlice";
 
 export const VotingPage = () => {
     const [catInfo, setCatInfo] = useState(null);
     const [isVoted, setIsVoted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const actionsHistory = loadActionsFromLocalStorage();
+    const dispatch = useDispatch();
     
 useEffect(() => {
     async function getCatToVote() {
@@ -38,8 +40,24 @@ useEffect(() => {
 
 
 const onReactionButtonClick = (type, catInfo) => {
-    saveCatToLocalStorage(type, catInfo);
-    saveActionToLocalStorage(type, catInfo.id, 'add');
+    switch (type) {
+    case 'Favorites':
+        dispatch(addCatToFavorites(catInfo));
+       dispatch(addAction({type: 'Favorites', id: catInfo.id, action: 'add' }))
+    break;
+    case 'Likes':
+    dispatch(addCatToLikes(catInfo));
+    dispatch(addAction({type: 'Likes', id: catInfo.id, action: 'add' }))
+
+    break;
+    case 'Dislikes':
+    dispatch(addCatToDislikes(catInfo));
+    dispatch(addAction({type: 'Dislikes', id: catInfo.id, action: 'add' }))
+
+    break;
+    default:
+        break;
+}
     setIsVoted(!isVoted);
 }
     return (
@@ -58,7 +76,7 @@ const onReactionButtonClick = (type, catInfo) => {
                     </MediaQuery>
                     {catInfo && !loading && <ImageOverlay url={catInfo.url}/>}
                 </ReactionButtons>
-                {actionsHistory && <ActionsSection actions={actionsHistory}/>}
+                <ActionsSection />
             </ContentSection>
             </MainSection>
         </PageWrapper>
