@@ -2,7 +2,7 @@
 
 PetsPaw is designed for cat enthusiasts who love to explore the fascinating world of diverse cat breeds and enjoy an extensive collection of cat pictures.
 
-**Used technologies:** PetsPaw is a React app with a responsive layout based on [The Cat API](https://thecatapi.com/).
+**Used technologies:** PetsPaw is a React app with a responsive layout based on [The Cat API](https://thecatapi.com/). Redux Toolkit and Redux Persist were used for managing the state of the application.
 
 **Experience the Live App:** **[Pets Paw](https://valeriaachkan-pets-paw.netlify.app/)**
 
