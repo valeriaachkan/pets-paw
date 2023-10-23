@@ -8,7 +8,7 @@ export const MenuSection = ({home = false}) => {
             <HomeLogo to="/"><Logo /></HomeLogo>
     
             <Heading>Hi!👋</Heading>
-            <Subheading>Welcome to MacPaw Bootcamp 2023</Subheading>
+            <Subheading>Welcome to the app for cat enthusiasts.</Subheading>
 
             <Caption>Lets start using The Cat API</Caption>
             <NavBar />
